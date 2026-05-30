@@ -1,0 +1,310 @@
+@import "tailwindcss";
+
+@theme {
+  --color-animal-primary: #19c8b9;
+  --color-animal-primary-hover: #3dd4c6;
+  --color-animal-primary-active: #50B9AB;
+  --color-animal-primary-bg: #e6f9f6;
+
+  --color-animal-success: #6fba2c;
+  --color-animal-success-hover: #85cc45;
+  --color-animal-success-active: #5a9e1e;
+
+  --color-animal-warning: #f5c31c;
+  --color-animal-warning-hover: #f7d04a;
+  --color-animal-warning-active: #dba90e;
+
+  --color-animal-error: #e05a5a;
+  --color-animal-error-hover: #e87878;
+  --color-animal-error-active: #c94444;
+
+  --color-animal-text: #794f27;
+  --color-animal-text-secondary: #9f927d;
+  --color-animal-text-disabled: #c4b89e;
+
+  --color-animal-border: #aaa69d;
+  --color-animal-border-hover: #827157;
+  --color-animal-border-light: #e8e2d6;
+
+  --color-animal-bg: #f8f8f0;
+  --color-animal-bg-secondary: #f0e8d8;
+  --color-animal-bg-disabled: #f0ece2;
+
+  --font-animal: Nunito, 'Noto Sans SC', 'Zen Maru Gothic', 'HarmonyOS Sans SC', 'MiSans', -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+
+  --shadow-animal-sm: 0 2px 4px 0 rgba(61, 52, 40, 0.06);
+  --shadow-animal-base: 0 3px 10px 0 rgba(61, 52, 40, 0.1);
+  --shadow-animal-lg: 0 8px 24px 0 rgba(61, 52, 40, 0.14);
+}
+
+body {
+  background-color: var(--color-animal-bg);
+  color: var(--color-animal-text);
+  font-family: var(--font-animal);
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem; /* Keep some padding from top when jumping */
+}
+.ghost {
+  opacity: 0.5;
+  background: var(--color-animal-bg-secondary);
+}
+
+/* Animal Island UI Component Styles */
+
+/* Base Button */
+.animal-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-animal);
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  outline: none;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-animal-sm);
+}
+.animal-btn:focus-visible {
+  outline: 2px solid var(--color-animal-primary);
+  outline-offset: 2px;
+}
+.animal-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  box-shadow: none;
+}
+
+/* Sizes */
+.animal-btn-small { height: 32px; padding: 0 16px; font-size: 12px; border-radius: 16px; }
+.animal-btn-middle { height: 45px; padding: 0 20px; font-size: 14px; }
+.animal-btn-large { height: 48px; padding: 0 32px; font-size: 16px; border-radius: 24px; }
+
+/* Types */
+.animal-btn-default {
+  color: var(--color-animal-text);
+  background: var(--color-animal-bg);
+  border-color: var(--color-animal-border);
+}
+.animal-btn-default:hover:not(:disabled) {
+  color: var(--color-animal-primary);
+  border-color: var(--color-animal-primary);
+  box-shadow: var(--shadow-animal-base);
+  transform: translateY(-1px);
+}
+.animal-btn-default:active:not(:disabled) {
+  color: var(--color-animal-primary-active);
+  border-color: var(--color-animal-primary-active);
+  transform: translateY(0);
+  box-shadow: var(--shadow-animal-sm);
+}
+
+.animal-btn-primary {
+  color: #794f27;
+  background: #f8f8f0;
+  border-color: #f8f8f0;
+  box-shadow: 0 5px 0 0 #bdaea0;
+}
+.animal-btn-primary:hover:not(:disabled) {
+  background: #f8f8f0;
+  border-color: #f8f8f0;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 0 0 #bdaea0;
+}
+.animal-btn-primary:active:not(:disabled) {
+  background: #f8f8f0;
+  border-color: #f8f8f0;
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 0 #bdaea0;
+}
+
+.animal-btn-dashed {
+  color: var(--color-animal-text);
+  background: var(--color-animal-bg);
+  border-color: var(--color-animal-border);
+  border-style: dashed;
+}
+.animal-btn-dashed:hover:not(:disabled) {
+  color: var(--color-animal-primary);
+  border-color: var(--color-animal-primary);
+  transform: translateY(-1px);
+}
+.animal-btn-dashed:active:not(:disabled) {
+  color: var(--color-animal-primary-active);
+  border-color: var(--color-animal-primary-active);
+  transform: translateY(0);
+}
+
+.animal-btn-text {
+  color: var(--color-animal-text);
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+.animal-btn-text:hover:not(:disabled) {
+  background: var(--color-animal-bg-secondary);
+}
+
+.animal-btn-danger.animal-btn-primary {
+  color: #fff;
+  background: var(--color-animal-error);
+  border-color: var(--color-animal-error);
+  box-shadow: 0 5px 0 0 var(--color-animal-error-active);
+}
+.animal-btn-danger.animal-btn-primary:hover:not(:disabled) {
+  background: var(--color-animal-error-hover);
+  border-color: var(--color-animal-error-hover);
+  box-shadow: 0 6px 0 0 var(--color-animal-error-active);
+}
+.animal-btn-danger.animal-btn-primary:active:not(:disabled) {
+  background: var(--color-animal-error-active);
+  border-color: var(--color-animal-error-active);
+  box-shadow: 0 1px 0 0 var(--color-animal-error-active);
+}
+
+/* Card */
+.animal-card {
+  background: #fffdf5;
+  border: 4px solid var(--color-animal-border-light);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 0 0 #e4dbc6, var(--shadow-animal-base);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--color-animal-text);
+}
+.animal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 0 0 #e4dbc6, var(--shadow-animal-lg);
+}
+.animal-card-header {
+  padding: 16px 20px;
+  font-weight: 800;
+  font-size: 18px;
+  border-bottom: 2px dashed var(--color-animal-border-light);
+}
+.animal-card-body {
+  padding: 20px;
+}
+
+/* Modal */
+.animal-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(121, 79, 39, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.animal-modal {
+  background: #fffdf5;
+  border-radius: 36px;
+  padding: 32px;
+  box-shadow: 0 12px 0 0 #e4dbc6, var(--shadow-animal-lg);
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+.animal-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-animal-bg-secondary);
+  color: var(--color-animal-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+.animal-modal-close:hover {
+  background: var(--color-animal-error);
+  color: white;
+}
+
+/* ========== CodeCell Component Styles ========== */
+.code-cell textarea {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  line-height: 1.6;
+}
+
+.code-cell .run-btn:active {
+  transform: scale(0.96);
+}
+
+/* ========== Quiz Component Styles ========== */
+.quiz-section button:active {
+  transform: scale(0.97);
+}
+
+/* ========== Dark Mode Support ========== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+  }
+
+  /* Let the user toggle manually if needed, but respect system default */
+  .dark\:bg-slate-900 { background-color: #0f172a; }
+}
+
+/* ========== Responsive Improvements ========== */
+@media (max-width: 1024px) {
+  .max-w-7xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+/* ========== Print Styles ========== */
+@media print {
+  aside, nav, .animal-footer, iframe, button:not(.no-print) {
+    display: none !important;
+  }
+
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+}
+
+/* ========== Animation Keyframes ========== */
+@keyframes code-cell-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-code-pulse {
+  animation: code-cell-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes slide-up-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slide-up-fade 0.4s ease-out;
+}
