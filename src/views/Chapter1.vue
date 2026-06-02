@@ -307,7 +307,7 @@ const cellIssues = {
   4: { 0: false, 1: false, 2: false, 3: false, 4: true }     // phone too short
 };
 
-const totalIssues = 8; // row0:1, row1:1, row2:2, row3:5(showing as entire row issue but counted as 5), row4:1
+const totalIssues = 6; // row0:1, row1:1, row2:2, row3:5(showing as entire row issue but counted as 5), row4:1
 // Actually let me simplify: row3 is a duplicate row, count as 1 issue total
 const totalIssuesCount = 6;
 
